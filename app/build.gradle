@@ -190,6 +190,8 @@ dependencies {
     implementation 'com.github.TeamNewPipe:NewPipeExtractor:eb07d70a2ce03bee3cc74fc33b2e4173e1c21436'
     implementation 'com.github.TeamNewPipe:NoNonsense-FilePicker:5.0.0'
 
+    implementation 'com.applitools:eyes-appium-helper-androidx:latest.release@aar'
+
 /** Checkstyle **/
     checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
     ktlint 'com.pinterest:ktlint:0.45.2'
@@ -240,7 +242,7 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-hls:${exoPlayerVersion}"
     implementation "com.google.android.exoplayer:exoplayer-smoothstreaming:${exoPlayerVersion}"
     implementation "com.google.android.exoplayer:exoplayer-ui:${exoPlayerVersion}"
-    implementation "com.google.android.exoplayer:extension-mediasession:${exoPlayerVersion}"
+    implementation "com.google.android.exoplayer:extension-mediasession:$exoPlayerVersion"
 
     // Metadata generator for service descriptors
     compileOnly "com.google.auto.service:auto-service-annotations:${googleAutoServiceVersion}"
@@ -273,6 +275,10 @@ dependencies {
     // Date and time formatting
     implementation "org.ocpsoft.prettytime:prettytime:5.0.6.Final"
 
+    // NMG lib - start
+    implementation("com.applitools:vhs-androidx:+")
+// NMG lib – end
+
 /** Debugging **/
     // Memory leak detection
     implementation "com.squareup.leakcanary:leakcanary-object-watcher-android:${leakCanaryVersion}"
@@ -289,8 +295,17 @@ dependencies {
 
     androidTestImplementation "androidx.test.ext:junit:1.1.3"
     androidTestImplementation "androidx.test:runner:1.4.0"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.room:room-testing:${androidxRoomVersion}"
     androidTestImplementation "org.assertj:assertj-core:${assertJVersion}"
+
+    androidTestImplementation 'com.applitools:eyes-android-common:latest.release'
+    androidTestImplementation 'com.applitools:eyes-android-core:latest.release'
+    androidTestImplementation 'com.applitools:eyes-android-components:latest.release@aar'
+    androidTestImplementation 'com.applitools:eyes-android-components-androidx:latest.release@aar'
+    androidTestImplementation 'com.applitools:eyes-android-espresso:latest.release@aar'
+
+
 }
 
 static String getGitWorkingBranch() {

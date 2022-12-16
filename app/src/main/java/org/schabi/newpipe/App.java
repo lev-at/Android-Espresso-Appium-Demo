@@ -10,6 +10,8 @@ import androidx.core.app.NotificationChannelCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.preference.PreferenceManager;
 
+import com.applitools.appium.helper.androidx.EyesAppiumHelper;
+import com.applitools.vhs.EyesUfg;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 
 import org.acra.ACRA;
@@ -74,6 +76,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        EyesAppiumHelper.initialize(this);
+        EyesUfg.setup(this, EyesUfg.Mode.APPIUM);
 
         app = this;
 

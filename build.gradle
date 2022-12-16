@@ -21,5 +21,12 @@ allprojects {
         mavenCentral()
         maven { url "https://jitpack.io" }
         maven { url "https://repo.clojars.org" }
+            maven {                url 'https://applitools.jfrog.io/artifactory/Android/'
+        }
+// NMG Lib
+        maven {
+            url "https://applitools.jfrog.io/artifactory/nmg/android/nmg_lib"
+        }
+
     }
 }
